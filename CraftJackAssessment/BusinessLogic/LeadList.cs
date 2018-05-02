@@ -32,6 +32,10 @@ namespace BusinessLogic
             {
                 leadEntries = leadLine.Split(',');
             }
+            if(leadEntries.Length == 1)
+            {
+                leadEntries = leadLine.Split(' ');
+            }
             
             string[] stringDate = leadEntries[4].Split('/');
             DateTime date = new DateTime(Convert.ToInt32(stringDate[2]), Convert.ToInt32(stringDate[0]), Convert.ToInt32(stringDate[1]));
