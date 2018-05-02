@@ -1,17 +1,21 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BusinessLogic;
 using System.Collections.Generic;
+using System;
 
 namespace Tests
 {
+    
     [TestClass]
     public class LeadListTests
     {
         LeadList leads;
+        
         [TestInitialize]
         public void LeadListTestInitialize()
         {
             leads = new LeadList();
+            
         }
         [TestMethod]
         public void CreateLeadList()
@@ -26,6 +30,16 @@ namespace Tests
             leads.AddLead(lead1);
             expectedResult.Add(lead1);
             CollectionAssert.AreEqual(expectedResult, leads.GetLeads());
+        }
+        [TestMethod]
+        public void AddLeadFromPipeDelimitedLine()
+        {
+            string leadLine = "Rusty|Shackleford|House|Bunker|05/15/2018";
+            leads.AddLead(leadLine);
+            List<Lead> expectedResult = new List<Lead>();
+            expectedResult.Add(new Lead("Rusty", "Shackleford", "House", "Bunker", new System.DateTime(2018, 5, 15)));
+            List<Lead> actualResult = leads.GetLeads();
+            CollectionAssert.AreEqual(expectedResult, actualResult);
         }
     }
 }

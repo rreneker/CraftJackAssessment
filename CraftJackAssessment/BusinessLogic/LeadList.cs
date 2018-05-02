@@ -24,5 +24,15 @@ namespace BusinessLogic
         {
             Leads.Add(lead1);
         }
+
+        public void AddLead(string leadLine)
+        {
+            string[] leadEntries = leadLine.Split('|');
+            
+            string[] stringDate = leadEntries[4].Split('/');
+            DateTime date = new DateTime(Convert.ToInt32(stringDate[2]), Convert.ToInt32(stringDate[0]), Convert.ToInt32(stringDate[1]));
+            Lead newLead = new Lead(leadEntries[0], leadEntries[1], leadEntries[2], leadEntries[3], date);
+            Leads.Add(newLead);
+        }
     }
 }
