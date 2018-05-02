@@ -23,7 +23,7 @@ namespace Tests
         {
             Lead lead1 = new Lead("Rusty", "Shackleford", "House", "Bunker", new System.DateTime(2018, 6, 10));
             List<Lead> expectedResult = new List<Lead>();
-            leads.Add(lead1);
+            leads.AddLead(lead1);
             expectedResult.Add(lead1);
             CollectionAssert.AreEqual(expectedResult, leads.GetLeads());
         }

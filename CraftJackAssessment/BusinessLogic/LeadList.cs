@@ -20,7 +20,7 @@ namespace BusinessLogic
             return Leads;
         }
 
-        public void Add(Lead lead1)
+        public void AddLead(Lead lead1)
         {
             Leads.Add(lead1);
         }
