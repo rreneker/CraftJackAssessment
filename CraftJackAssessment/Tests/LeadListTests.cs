@@ -41,5 +41,15 @@ namespace Tests
             List<Lead> actualResult = leads.GetLeads();
             CollectionAssert.AreEqual(expectedResult, actualResult);
         }
+        [TestMethod]
+        public void AddLeadFromCommaDelimitedLine()
+        {
+            string leadLine = "Rusty,Shackleford,House,Bunker,05/15/2018";
+            leads.AddLead(leadLine);
+            List<Lead> expectedResult = new List<Lead>();
+            expectedResult.Add(new Lead("Rusty", "Shackleford", "House", "Bunker", new System.DateTime(2018, 5, 15)));
+            List<Lead> actualResult = leads.GetLeads();
+            CollectionAssert.AreEqual(expectedResult, actualResult);
+        }
     }
 }
