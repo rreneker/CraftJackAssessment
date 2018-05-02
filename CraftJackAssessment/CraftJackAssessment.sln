@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.27130.2027
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CraftJackAssessment", "CraftJackAssessment\CraftJackAssessment.csproj", "{2D47B2EC-0D8D-4640-A271-0A58F2B185C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BusinessLogic", "BusinessLogic\BusinessLogic.csproj", "{5D359BAE-FEDF-45CA-9156-8A6744751D62}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B55799E7-2F68-4BD3-8F6A-06CB39B1FFB0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{2D47B2EC-0D8D-4640-A271-0A58F2B185C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D47B2EC-0D8D-4640-A271-0A58F2B185C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D47B2EC-0D8D-4640-A271-0A58F2B185C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D359BAE-FEDF-45CA-9156-8A6744751D62}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D359BAE-FEDF-45CA-9156-8A6744751D62}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D359BAE-FEDF-45CA-9156-8A6744751D62}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D359BAE-FEDF-45CA-9156-8A6744751D62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B55799E7-2F68-4BD3-8F6A-06CB39B1FFB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B55799E7-2F68-4BD3-8F6A-06CB39B1FFB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B55799E7-2F68-4BD3-8F6A-06CB39B1FFB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B55799E7-2F68-4BD3-8F6A-06CB39B1FFB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
