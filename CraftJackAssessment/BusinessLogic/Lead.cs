@@ -22,5 +22,20 @@ namespace BusinessLogic
             Project = project;
             StartDate = startDate;
         }
+
+        public override bool Equals(object obj)
+        {
+            Lead lead = (Lead)obj;
+            if(lead.FirstName == FirstName && lead.LastName == LastName && lead.Project == Project && lead.PropertyType == PropertyType && lead.StartDate == StartDate)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
+
+    
 }
