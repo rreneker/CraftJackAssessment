@@ -42,5 +42,13 @@ namespace BusinessLogic
             Lead newLead = new Lead(leadEntries[0], leadEntries[1], leadEntries[2], leadEntries[3], date);
             Leads.Add(newLead);
         }
+
+        public List<Lead> SortByPropertyTypeThenProject()
+        {
+            var result = Leads.OrderBy(l => l.PropertyType).ThenBy(l => l.Project);
+            List<Lead> finalResult = result.ToList<Lead>();
+            return finalResult;
+            throw new NotImplementedException();
+        }
     }
 }

@@ -23,6 +23,13 @@ namespace BusinessLogic
             StartDate = startDate;
         }
 
+        public string StringToPrint()
+        {
+            string result = FirstName + " " + LastName + " " + PropertyType + " " + Project + " "+StartDate.ToString("MM/dd/yyyy");
+            return result;
+            
+        }
+
         public override bool Equals(object obj)
         {
             Lead lead = (Lead)obj;
