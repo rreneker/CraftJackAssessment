@@ -56,5 +56,12 @@ namespace BusinessLogic
             List<Lead> finalResult = result.ToList<Lead>();
             return finalResult;
         }
+
+        public List<Lead> SortByLastNameDescending()
+        {
+            var result = Leads.OrderByDescending(l => l.LastName);
+            List<Lead> finalResult = result.ToList<Lead>();
+            return finalResult;
+        }
     }
 }
