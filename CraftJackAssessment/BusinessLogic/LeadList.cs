@@ -48,7 +48,13 @@ namespace BusinessLogic
             var result = Leads.OrderBy(l => l.PropertyType).ThenBy(l => l.Project);
             List<Lead> finalResult = result.ToList<Lead>();
             return finalResult;
-            throw new NotImplementedException();
+        }
+
+        public List<Lead> SortByStartDate()
+        {
+            var result = Leads.OrderBy(l => l.StartDate);
+            List<Lead> finalResult = result.ToList<Lead>();
+            return finalResult;
         }
     }
 }
