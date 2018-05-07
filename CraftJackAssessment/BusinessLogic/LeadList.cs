@@ -63,5 +63,12 @@ namespace BusinessLogic
             List<Lead> finalResult = result.ToList<Lead>();
             return finalResult;
         }
+
+        public List<Lead> SortByProject()
+        {
+            var result = Leads.OrderBy(l => l.Project);
+            List<Lead> finalResult = result.ToList<Lead>();
+            return finalResult;
+        }
     }
 }

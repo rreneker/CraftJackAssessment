@@ -118,5 +118,24 @@ namespace Tests
 
             CollectionAssert.AreEqual(expectedResult, sortedResult);
         }
+        [TestMethod]
+        public void SortLeadsByProject()
+        {
+            foreach (string line in File.ReadLines("TestInput1.txt"))
+            {
+                leads.AddLead(line);
+            }
+            List<Lead> sortedResult = leads.SortByProject();
+
+            List<Lead> expectedResult = new List<Lead>();
+            
+            expectedResult.Add(new Lead("Rusty", "Shackleford", "House", "Bunker", new DateTime(2018, 5, 15)));
+            expectedResult.Add(new Lead("Homer", "Simpson", "House", "Foundation", new DateTime(2018, 6, 1)));
+            expectedResult.Add(new Lead("Dante", "Hicks", "Trailer", "Plumbing", new DateTime(2018, 5, 27)));
+            expectedResult.Add(new Lead("Phillip", "Fry", "Condo", "Plumbing", new DateTime(2018, 10, 21)));
+            expectedResult.Add(new Lead("Jim", "Harbaugh", "House", "Siding", new DateTime(2018, 7, 19)));
+
+            CollectionAssert.AreEqual(expectedResult, sortedResult);
+        }
     }
 }
