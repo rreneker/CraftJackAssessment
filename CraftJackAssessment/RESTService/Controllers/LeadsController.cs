@@ -6,6 +6,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BusinessLogic;
+using Newtonsoft.Json;
 
 namespace RESTService.Controllers
 {
@@ -36,8 +37,8 @@ namespace RESTService.Controllers
             {
                 finalResults.Add(lead.StringToPrint());
             }
-            
-            return finalResults;
+
+            yield return JsonConvert.SerializeObject(finalResults);
         }
 
         [Route("leads/startdate")]
@@ -50,7 +51,7 @@ namespace RESTService.Controllers
                 finalResults.Add(lead.StringToPrint());
             }
 
-            return finalResults;
+            yield return JsonConvert.SerializeObject(finalResults);
         }
         [Route("leads/project")]
         public IEnumerable<string> GetLeadsByProject()
@@ -62,7 +63,7 @@ namespace RESTService.Controllers
                 finalResults.Add(lead.StringToPrint());
             }
 
-            return finalResults;
+            yield return JsonConvert.SerializeObject(finalResults);
         }
 
         // POST: api/Leads
