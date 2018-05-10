@@ -12,7 +12,7 @@ namespace RESTService.Controllers
 {
     public class LeadsController : ApiController
     {
-        LeadList leadList;
+        public LeadList leadList;
         public LeadsController()
         {
             leadList = new LeadList();

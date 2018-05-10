@@ -70,5 +70,10 @@ namespace BusinessLogic
             List<Lead> finalResult = result.ToList<Lead>();
             return finalResult;
         }
+
+        public int LeadCount()
+        {
+            return Leads.Count;
+        }
     }
 }
