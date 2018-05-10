@@ -137,5 +137,28 @@ namespace Tests
 
             CollectionAssert.AreEqual(expectedResult, sortedResult);
         }
+        [TestMethod]
+        public void NumberOfLeadsEmpty()
+        {
+            Assert.AreEqual(0, leads.LeadCount());
+        }
+        [TestMethod]
+        public void NumberOfLeadsOneAdded()
+        {
+            leads.AddLead("Jim Raynor House Plumbing 05/19/2018");
+            Assert.AreEqual(1, leads.LeadCount());
+        }
+
+        [TestMethod]
+        public void NumberOfLeadsInitialized()
+        {
+            foreach (string line in File.ReadLines("TestInput1.txt"))
+            {
+                leads.AddLead(line);
+            }
+
+            Assert.AreEqual(5, leads.LeadCount());
+        }
+
     }
 }
