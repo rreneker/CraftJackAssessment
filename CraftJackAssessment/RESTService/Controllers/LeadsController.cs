@@ -27,16 +27,21 @@ namespace RESTService.Controllers
             }
             
         }
+        public List<string> GenerateResult(List<Lead> inputs)
+        {
+            List<string> finalResults = new List<string>();
+            foreach(Lead lead in inputs)
+            {
+                finalResults.Add(lead.StringToPrint());
+            }
+            return finalResults;
+        }
         // GET: api/Leads
         [Route("leads/propertytype")]
         public IEnumerable<string> GetLeadsByPropertyType()
         {
             List<Lead> result = leadList.SortByPropertyTypeThenProject();
-            List<string> finalResults = new List<string>();
-            foreach(Lead lead in result)
-            {
-                finalResults.Add(lead.StringToPrint());
-            }
+            List<string> finalResults = GenerateResult(result);
 
             yield return JsonConvert.SerializeObject(finalResults);
         }
@@ -45,11 +50,7 @@ namespace RESTService.Controllers
         public IEnumerable<string> GetLeadsByStartDate()
         {
             List<Lead> result = leadList.SortByStartDate();
-            List<string> finalResults = new List<string>();
-            foreach (Lead lead in result)
-            {
-                finalResults.Add(lead.StringToPrint());
-            }
+            List<string> finalResults = GenerateResult(result);
 
             yield return JsonConvert.SerializeObject(finalResults);
         }
@@ -57,11 +58,7 @@ namespace RESTService.Controllers
         public IEnumerable<string> GetLeadsByProject()
         {
             List<Lead> result = leadList.SortByProject();
-            List<string> finalResults = new List<string>();
-            foreach (Lead lead in result)
-            {
-                finalResults.Add(lead.StringToPrint());
-            }
+            List<string> finalResults = GenerateResult(result);
 
             yield return JsonConvert.SerializeObject(finalResults);
         }
